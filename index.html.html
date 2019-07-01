@@ -1,0 +1,775 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html>
+
+
+<!-- Mirrored from srvcas.espe.edu.ec/authenticationendpoint/login.do?Name=PreLoginRequestProcessor&commonAuthCallerPath=%252Fcas%252Flogin&forceAuth=true&passiveAuth=false&service=https%3A%2F%2Fmiespe.espe.edu.ec%2Fc%2Fportal%2Flogin&tenantDomain=carbon.super&sessionDataKey=c9845419-a3d6-43f2-b7c1-af7b5c1e439f&relyingParty=portal_luminis&type=cas&sp=portal_luminis&isSaaSApp=false&authenticators=BasicAuthenticator:LOCAL by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 01 Jul 2019 14:14:04 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenido a Mi ESPE</title>
+
+    <link rel="icon" href="images/favicon.png" type="image/x-icon" />
+    <link href="libs/bootstrap_3.3.5/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/Roboto.css" rel="stylesheet">
+    <link href="css/custom-common.css" rel="stylesheet">
+
+    
+    <link href="css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="../../cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="../../cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+    <!--[if lt IE 9]>
+        <script src="js/html5shiv.min.js"></script>
+        <script src="js/respond.min.js"></script>
+        <![endif]-->
+
+    <style>
+        .carousel-item h1 {
+            color: #fff;
+            font-size: 20px;
+            margin: 75px auto;
+            text-align: center;
+        }
+
+        .login-block r {
+
+            width: 50%;
+            margin: 0 auto;
+
+        }
+
+        .signup__overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: auto;
+        }
+
+        .login_sec {
+
+
+            padding: 0px;
+            background-color: #f8fafb;
+
+        }
+
+        .login_sec img {
+
+            margin: 24px auto;
+
+        }
+
+        .banner-sec {
+            background: url(images/sidebar-4.jpg) no-repeat left bottom;
+            background-size: cover;
+            min-height: 500px;
+            padding: 0;
+        }
+
+        .banner-sm {
+            background: url(images/miespesm.png) no-repeat left bottom;
+            background-size: cover;
+            min-height: 500px;
+            padding: 0;
+        }
+
+
+
+        .carousel-fade .carousel-item {
+            opacity: 0;
+            transition-duration: .6s;
+            transition-property: opacity;
+        }
+
+        .carousel-indicators {
+
+            bottom: -41px;
+        }
+
+        .carousel-indicators .active {
+            background-color: #fff;
+        }
+
+        .carousel-fade .carousel-item.active,
+        .carousel-fade .carousel-item-next.carousel-item-left,
+        .carousel-fade .carousel-item-prev.carousel-item-right {
+            opacity: 1;
+        }
+
+        .carousel-fade .active.carousel-item-left,
+        .carousel-fade .active.carousel-item-right {
+            opacity: 0;
+        }
+
+        .carousel-fade .carousel-item-next,
+        .carousel-fade .carousel-item-prev,
+        .carousel-fade .carousel-item.active,
+        .carousel-fade .active.carousel-item-left,
+        .carousel-fade .active.carousel-item-prev {
+            transform: translateX(0);
+            transform: translate3d(0, 0, 0);
+        }
+
+        .container {
+
+            -webkit-box-shadow: 0 0.1875rem 1.5rem rgba(0, 0, 0, 0.2);
+            box-shadow: 0 0.1875rem 1.5rem rgba(0, 0, 0, 0.2);
+            border-radius: 0.375rem;
+            margin-bottom: 5%;
+
+        }
+
+        .carousel-inner {
+            border-radius: 0 10px 10px 0;
+        }
+
+        .carousel-caption {
+            text-align: left;
+            left: 5%;
+        }
+
+        .login-sec {
+            padding: 50px 30px;
+            position: relative;
+        }
+
+        .login-sec .copy-text {
+            position: absolute;
+            width: 80%;
+            bottom: 20px;
+            font-size: 13px;
+            text-align: center;
+        }
+
+        .login-sec .copy-text i {
+            color: #00713d;
+        }
+
+        .login-sec .copy-text a {
+            color: #007bff;
+        }
+
+        .login-sec h2 {
+            margin-bottom: 30px;
+            font-weight: 800;
+            font-size: 30px;
+            color: #00713d;
+        }
+
+        .login-sec h2:after {
+            content: " ";
+            width: 100px;
+            height: 5px;
+            background: #00713d;
+            display: block;
+            margin-top: 8px;
+            border-radius: 3px;
+            margin-left: auto;
+            margin-right: auto
+        }
+
+
+        .banner-text {
+            width: 70%;
+            position: absolute;
+            bottom: 40px;
+            padding-left: 20px;
+        }
+
+        .banner-text h2 {
+            color: #fff;
+            font-weight: 600;
+        }
+
+        .banner-text h2:after {
+            content: " ";
+            width: 100px;
+            height: 5px;
+            background: #FFF;
+            display: block;
+            margin-top: 20px;
+            border-radius: 3px;
+        }
+
+        .banner-text p {
+            color: #fff;
+        }
+
+        /* login start */
+
+        .container-login100-form-btn {
+            margin: 0 auto;
+            display: block;
+            text-align: center;
+            padding-top: 1%;
+            padding-bottom: 2%;
+        }
+
+        .login100-form {
+            width: 100%;
+        }
+
+
+        .validate-input {
+            position: relative;
+        }
+
+        .wrap-input100 {
+            width: 100%;
+            position: relative;
+            border-bottom: 2px solid #d9d9d9;
+            margin-bottom: 5%;
+        }
+
+        .label-input100 {
+
+            font-size: 14px;
+            color: #333333;
+            line-height: 1.5;
+            padding-left: 7px;
+        }
+
+        textarea:focus,
+        input:focus {
+            border-color: transparent !important;
+        }
+
+        .input100:focus+.focus-input100::before {
+            width: 100%;
+        }
+
+
+
+        .input100 {
+            font-size: 12px;
+            color: #333333;
+            line-height: 1.2;
+            display: block;
+            width: 100%;
+            height: 30px;
+            background: transparent;
+            padding: 0 7px 0 43px;
+        }
+
+        .focus-input100 {
+            position: absolute;
+            display: block;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+        }
+
+        .focus-input100::before {
+            content: "";
+            display: block;
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #7f7f7f;
+            -webkit-transition: all 0.4s;
+            -o-transition: all 0.4s;
+            -moz-transition: all 0.4s;
+            transition: all 0.4s;
+        }
+
+        .focus-input100::after {
+            font-family: "FontAwesome";
+            content: "\f007";
+            color: #adadad;
+            font-size: 22px;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -moz-box;
+            display: -ms-flexbox;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            height: calc(100% - 20px);
+            bottom: 0;
+            left: 0;
+            padding-left: 13px;
+            padding-top: 3px;
+        }
+
+        .focus-input100.password::after {
+            font-family: "FontAwesome";
+            content: "\f023";
+            color: #adadad;
+            font-size: 22px;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -moz-box;
+            display: -ms-flexbox;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            height: calc(100% - 20px);
+            bottom: 0;
+            left: 0;
+            padding-left: 13px;
+            padding-top: 3px;
+        }
+
+        input {
+            outline: none;
+            border: none;
+        }
+
+
+
+        .flex-c-m {
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -moz-box;
+            display: -ms-flexbox;
+            display: flex;
+            justify-content: center;
+            -ms-align-items: center;
+            align-items: center;
+        }
+
+        .login100-social-item {
+            font-size: 12px;
+            color: #fff;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -moz-box;
+            display: -ms-flexbox;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            margin: 5px;
+        }
+
+        .bg1 {
+            background-color: #00713d;
+        }
+
+
+        .bg3 {
+            background-color: #ea4335;
+        }
+    </style>
+
+
+
+
+    
+
+    <script>
+
+        function checkSessionKey() {
+            $.ajax({
+                type: "GET",
+                url: "/logincontext?sessionDataKey=" + getParameterByName("sessionDataKey") + "&relyingParty=" + getParameterByName("relyingParty") + "&tenantDomain=" + getParameterByName("tenantDomain"),
+                success: function (data) {
+                    if (data && data.status == 'redirect' && data.redirectUrl && data.redirectUrl.length > 0) {
+                        window.location.href = data.redirectUrl;
+                    }
+                }
+            });
+        }
+
+
+        function getParameterByName(name, url) {
+            if (!url) {
+                url = window.location.href;
+            }
+            name = name.replace(/[\[\]]/g, '\$&');
+            var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return "";
+            return decodeURIComponent(results[2].replace(/\+/g, ' '));
+        }
+    </script>
+</head>
+
+<body onload="checkSessionKey()">
+    
+    <!-- page content -->
+
+
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-md-8 col-lg-8 banner-sec hidden-xs hidden-sm">
+            </div>
+            <div class="col-md-8 col-lg-8 banner-sm  visible-sm">
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                <div class="col-4 offset-4 hidden-xs hidden-sm">
+                    <img src="images/Espe-Angular-Logo.png"
+                        class="img-fluid align-content-center">
+                </div>
+                <div class="col-8 offset-2 visible-xs visible-sm">
+                    <img src="images/Logo-MiESPE.png" class="img-fluid align-content-center">
+                </div>
+                <div class="container-fluid body-wrapper">
+
+                    <div class="row">
+
+                        <!-- content -->
+                        <div class="fluid-wrapper">
+
+                            
+                            
+                            
+
+
+                            
+                            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+       /* function submitCredentials (e) {
+            e.preventDefault();
+            var userName = document.getElementById("username");
+            userName.value = userName.value.trim();
+            if(userName.value){
+                document.getElementById("loginForm").submit();
+            }
+        }
+
+        function goBack() {
+            window.history.back();
+        }*/
+</script>
+
+
+
+
+<form action="/" name="loginForm" id="loginForm">
+
+    
+
+    
+
+    
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 form-group">
+        <label for="username">Usuario</label>
+        <input id="username" name="username" type="text" class="form-control" tabindex="0" placeholder="Ingrese su usuario" required>
+    </div>
+    
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 form-group">
+        <label for="password">Contraseña</label>
+        <input id="password" name="password" type="password" class="form-control" placeholder="Ingrese su contrase&#241;a" autocomplete="off">
+    </div>
+	 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 form-group">
+      	<div class="form-actions">
+            <button
+                    class="wr-btn grey-bg col-xs-12 col-md-12 col-lg-12 uppercase font-extra-large margin-bottom-double"
+                    type="submit">
+                    Ingresar
+            </button>
+        </div>
+    </div>
+    
+</form>
+
+
+        
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 form-group">
+            <div class="form-actions">
+                Olvidó
+                
+                    <a id="usernameRecoverLink" href="https://srvcas.espe.edu.ec/accountrecoveryendpoint/recoverusername.do?callback=https%3A%2F%2Fsrvcas.espe.edu.ec%3A443%2Fauthenticationendpoint%2Flogin.do%3FName%3DPreLoginRequestProcessor%26commonAuthCallerPath%3D%25252Fcas%25252Flogin%26forceAuth%3Dtrue%26passiveAuth%3Dfalse%26service%3Dhttps%253A%252F%252Fmiespe.espe.edu.ec%252Fc%252Fportal%252Flogin%26tenantDomain%3Dcarbon.super%26sessionDataKey%3Dc9845419-a3d6-43f2-b7c1-af7b5c1e439f%26relyingParty%3Dportal_luminis%26type%3Dcas%26sp%3Dportal_luminis%26isSaaSApp%3Dfalse%26authenticators%3DBasicAuthenticator%3ALOCAL">
+                        
+                    </a>
+                    su
+                
+                <a id="passwordRecoverLink" href="https://srvcas.espe.edu.ec/accountrecoveryendpoint/recoverpassword.do?callback=https%3A%2F%2Fsrvcas.espe.edu.ec%3A443%2Fauthenticationendpoint%2Flogin.do%3FName%3DPreLoginRequestProcessor%26commonAuthCallerPath%3D%25252Fcas%25252Flogin%26forceAuth%3Dtrue%26passiveAuth%3Dfalse%26service%3Dhttps%253A%252F%252Fmiespe.espe.edu.ec%252Fc%252Fportal%252Flogin%26tenantDomain%3Dcarbon.super%26sessionDataKey%3Dc9845419-a3d6-43f2-b7c1-af7b5c1e439f%26relyingParty%3Dportal_luminis%26type%3Dcas%26sp%3Dportal_luminis%26isSaaSApp%3Dfalse%26authenticators%3DBasicAuthenticator%3ALOCAL">
+                    Contraseña
+                </a>
+                ?
+            </div>
+
+	<!-- <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 padding-double">
+        <div class="alert alert-warning margin-bottom-3 padding-10" role="alert">
+            <div>
+                Este sitio web usa cookies para garantizar que obtengas la mejor experiencia en nuestro sitio web. Puede consultar nuestra 
+                <a href="cookie_policy.do" target="policy-pane">
+                    Política de Cookies
+                </a>
+                para más detalles.
+            </div>
+        </div>
+        <div class="alert alert-warning margin-none padding-10" role="alert">
+            <div>
+                Al iniciar sesión, aceptas nuestras
+                <a href="privacy_policy.do" target="policy-pane">
+                    Políticas de Privacidad.
+                </a>
+            </div>
+        </div>
+    </div> -->
+
+
+
+
+            <div class="form-actions">
+                
+            </div>
+        </div>
+        
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 form-group">
+            <div class="form-actions" style="visibility: hidden">
+            Don&#39;t have an account?
+            <a id="registerLink" href="https://srvcas.espe.edu.ec/accountrecoveryendpoint/register.do?callback=https%3A%2F%2Fsrvcas.espe.edu.ec%3A443%2Fauthenticationendpoint%2Flogin.do%3FName%3DPreLoginRequestProcessor%26commonAuthCallerPath%3D%25252Fcas%25252Flogin%26forceAuth%3Dtrue%26passiveAuth%3Dfalse%26service%3Dhttps%253A%252F%252Fmiespe.espe.edu.ec%252Fc%252Fportal%252Flogin%26tenantDomain%3Dcarbon.super%26sessionDataKey%3Dc9845419-a3d6-43f2-b7c1-af7b5c1e439f%26relyingParty%3Dportal_luminis%26type%3Dcas%26sp%3Dportal_luminis%26isSaaSApp%3Dfalse%26authenticators%3DBasicAuthenticator%3ALOCAL">
+                Register Now
+            </a>
+            </div>
+        </div>
+        
+    
+    </div>
+
+    <div class="clearfix"></div>
+
+
+                            
+
+                            
+
+                            
+                            
+                            <div class="clearfix"></div>
+                            <!-- /content -->
+                            <div class="col-12 row center-block">
+                                <ul class="nav nav-tabs">
+                                    <li class="active">
+                                        <a href="#1a" data-toggle="tab"> <button type="button"
+                                                class="btn btn-outline-primary btn-lg" data-placement="bottom"
+                                                title="Información General" data-toggle="modal"
+                                                data-target="#exampleModalCenter"><span
+                                                    class="	glyphicon glyphicon-search "></span></button></a>
+                                    </li>
+                                    <li><a href="#2a" data-toggle="tab"><button type="button"
+                                                class="btn btn-outline-success btn-lg" data-toggle="tooltip"
+                                                data-placement="bottom" title="Recomendaciones"><span
+                                                    class="glyphicon glyphicon-info-sign"></span></button></a>
+                                    </li>
+                                    <li><a href="#3a" data-toggle="tab"><button type="button"
+                                                class="btn btn-outline-dark btn-lg" data-toggle="tooltip"
+                                                data-placement="bottom" title="Más Información"><span
+                                                    class="glyphicon glyphicon-question-sign"></span></button></a>
+                                    </li>
+                                </ul>
+                                <div class="tab-content clearfix">
+                                    <div class="tab-pane active" id="1a">
+                                        <h4>INFORMACI&#211;N GENERAL</h4>
+                                        <p>Para revisar la información disponible sin ingresar a Mi ESPE, por favor
+                                            utilice estos Links.
+                                        </p>
+                                        <li><a href="#">Informaci&#243;n General Estudiantes</a> </li>
+                                        <li><a href="#">Informaci&#243;n de Matr&#237;culas</a> </li>
+                                        <li><a href="#">Reporte B&#250;squeda de NRCs</a> </li>
+                                    </div>
+                                    <div class="tab-pane" id="2a">
+                                        <h4>RECOMENDACIONES</h4>
+                                        <p>La clave de acceso por primera vez es su fecha de nacimiento en formato de 2
+                                            d&#237;gitos
+                                            ejemplo: <span class="text-primary">20 de
+                                                Febrero del 1998.</span> <br>
+                                            Debe ingresar as&#237; : <span class="text-danger"> 200298 </span></p>
+                                    </div>
+                                    <div class="tab-pane" id="3a">
+                                        <h4>M&#193;S INFORMACI&#211;N</h4>
+                                        <p>Por favor acercarse PERSONALMENTE a la ventanilla del helpdesk con su carnet
+                                            o c&#233;dula de
+                                            identidad,
+                                            o a su vez enviar a la cuenta de correo <span
+                                                class="text-info">helpdesk@espe.edu.ec</span> </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="center-block">
+                                <div class="col-4 offset-4 hidden-xs">
+                                    <img src="images/Logo-MiESPE.png"
+                                        class="img-fluid align-content-center">
+                                </div>
+                                <p class="text-center">
+                                    <strong style="color: #000;">&copy;</strong>
+                                    <a href="https://www.espe.edu.ec/" target="_blanck">Universidad de las Fuerzas
+                                        Armadas ESPE</a>
+                                    <br>
+                                    Unidad de Tecnologías de la Información y Comunicaciones <br> UTIC
+                                </p>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- /content/body -->
+                </div>
+            </div>
+            
+        </div>
+        <script src="libs/jquery_1.11.3/jquery-1.11.3.js"></script>
+        <script src="libs/bootstrap_3.3.5/js/bootstrap.min.js"></script>
+        <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js "></script>
+        <script src="https://cdn.datatables.net/buttons/1.5.6/js/dataTables.buttons.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js "></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+        <script src="https://cdn.datatables.net/buttons/1.5.6/js/buttons.html5.min.js"></script>
+		        <script>
+            $(document).ready(function () {
+                $("#loginForm").submit(function (event) {
+                    var formData = {
+                        'nombre': $('input[name=username]').val(),
+                        'clave': $('input[name=password]').val()
+                    };
+                    // process the form
+                    $.ajax({
+                        type: 'POST', // define the type of HTTP verb we want to use (POST for our form)
+                        url: 'https://starups.herokuapp.com/api/estes', // the url where we want to POST
+                        data: formData, // our data object
+                        dataType: 'json', // what type of data do we expect back from the server
+                        encode: true
+                    })
+                        // using the done promise callback
+                        .done(function (data) {
+                            // log data to the console so we can see
+                            console.log(data);
+                            //alert("Su cliente ha sido registrado exitosamente");
+                            // here we will handle errors and validation messages
+                        });
+                    // stop the form from submitting the normal way and refreshing the page
+                    event.preventDefault();
+                });
+		});
+	   </script>
+        <script>
+            $(document).ready(function () {
+                $('.main-link').click(function () {
+                    $('.main-link').next().hide();
+                    $(this).next().toggle('fast');
+                    var w = $(document).width();
+                    var h = $(document).height();
+                    $('.overlay').css("width", w + "px").css("height", h + "px").show();
+                });
+                $('[data-toggle="popover"]').popover();
+                $('.overlay').click(function () {
+                    $(this).hide();
+                    $('.main-link').next().hide();
+                });
+
+            
+        });
+            function myFunction(key, value, name) {
+                var object = document.getElementById(name);
+                var domain = object.value;
+
+
+                if (domain != "") {
+                    document.location = "../commonauth?idp=" + key + "&authenticator=" + value +
+                        "&sessionDataKey=c9845419-a3d6-43f2-b7c1-af7b5c1e439f&domain=" +
+                            domain;
+                } else {
+                    document.location = "../commonauth?idp=" + key + "&authenticator=" + value +
+                        "&sessionDataKey=c9845419-a3d6-43f2-b7c1-af7b5c1e439f";
+                }
+            }
+
+            function handleNoDomain(key, value) {
+            
+                    document.location = "../commonauth?idp=" + key + "&authenticator=" + value +
+                        "&sessionDataKey=c9845419-a3d6-43f2-b7c1-af7b5c1e439f" +
+                            "";
+            }
+
+            $('#popover').popover({
+                html: true,
+                title: function () {
+                    return $("#popover-head").html();
+                },
+                content: function () {
+                    return $("#popover-content").html();
+                }
+            });
+            window.onunload = function () { };
+        </script>
+
+        <script>
+            function changeUsername(e) {
+                document.getElementById("changeUserForm").submit();
+            }
+        </script>
+
+        
+
+        <!-- Bootstrap core JavaScript
+    ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="../../ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="../../maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+</body>
+
+
+<!-- Mirrored from srvcas.espe.edu.ec/authenticationendpoint/login.do?Name=PreLoginRequestProcessor&commonAuthCallerPath=%252Fcas%252Flogin&forceAuth=true&passiveAuth=false&service=https%3A%2F%2Fmiespe.espe.edu.ec%2Fc%2Fportal%2Flogin&tenantDomain=carbon.super&sessionDataKey=c9845419-a3d6-43f2-b7c1-af7b5c1e439f&relyingParty=portal_luminis&type=cas&sp=portal_luminis&isSaaSApp=false&authenticators=BasicAuthenticator:LOCAL by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 01 Jul 2019 14:14:15 GMT -->
+</html>
